@@ -7,12 +7,12 @@ export default function Home() {
         {" "}
         <div>
           <div className="overflow-hidden">
-            <div className="relative h-[400px] w-[500px]">
+            <div className="relative h-[400px] w-[600px]">
               <Image
                 src="/illustration-working.svg"
                 alt="Shortly logo"
-                className="absolute top-0 left-0 translate-x-[5%] w-full h-full"
-                width={500}
+                className="absolute top-0 left-0 right-0 translate-x-1 w-full h-full"
+                width={600}
                 height={400}
               />
             </div>
