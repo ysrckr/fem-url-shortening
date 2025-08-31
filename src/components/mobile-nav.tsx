@@ -6,7 +6,7 @@ type MobileNavProps = {
 
 export const MobileNav = ({ ref }: MobileNavProps) => (
   <nav
-    className="flex flex-col items-center gap-4 absolute top-0 left-0 right-0 md:hidden translate-y-1/6 bg-purple-95 rounded-lg shadow-lg mx-6 py-8"
+    className="flex flex-col items-center gap-4 absolute top-0 left-0 right-0 md:hidden translate-y-1/6 bg-purple-95 rounded-lg shadow-lg mx-6 py-8 z-10"
     ref={ref}
     id="mobile-nav"
   >
