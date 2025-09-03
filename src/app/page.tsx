@@ -1,8 +1,40 @@
+import { Card } from "@/components/card";
 import Image from "next/image";
 import Link from "next/link";
 import { Shortener } from "@/components/shortener";
 import { ShortenerSkeleton } from "@/components/skeletons/shortener.skeleton";
 import { Suspense } from "react";
+import { cn } from "@/utils/cn";
+
+const cards = [
+  {
+    title: "Brand Recognition",
+    content:
+      "Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.",
+    image: {
+      src: "/icon-brand-recognition.svg",
+      alt: "Brand Recognition",
+    },
+  },
+  {
+    title: "Detailed Records",
+    content:
+      "Gain insights into your link performance with our detailed records. Understand your audience better and optimize your strategies.",
+    image: {
+      src: "/icon-detailed-records.svg",
+      alt: "Detailed Records",
+    },
+  },
+  {
+    title: "Fully Customizable",
+    content:
+      "Improve brand awareness and content discoverability through customizable links, landing pages, and more.",
+    image: {
+      src: "/icon-fully-customizable.svg",
+      alt: "Fully Customizable",
+    },
+  },
+];
 
 export default function Home() {
   return (
@@ -38,16 +70,37 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-gray-100 px-4">
+      <section className="bg-gray-100">
+        {" "}
         <Suspense fallback={<ShortenerSkeleton />}>
           <Shortener />
         </Suspense>
+      </section>
+      <section className="bg-gray-100 px-4 pb-8">
         <div className="container m-auto text-center py-6 px-4">
           <h2 className="mb-4 font-bold text-3xl">Advanced Statistics</h2>
           <p className="text-gray-5 max-w-lg m-auto text-sm">
             Track how your links are performing with our advanced statistics
             dashboard.
           </p>
+        </div>
+        <div className="container flex justify-between mx-auto gap-6 flex-col lg:flex-row lg:gap-4 lg:px-8 my-6 relative after:absolute after:bg-blue-4 after:h-2 after:w-3/4 after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:z-0">
+          {cards?.length > 0 ? (
+            cards.map((card, index) => {
+              return (
+                <Card
+                  key={card.title}
+                  {...card}
+                  className={cn("z-10", {
+                    "lg:translate-y-8": index === 1,
+                    "lg:translate-y-16": index === 2,
+                  })}
+                />
+              );
+            })
+          ) : (
+            <p>No cards available</p>
+          )}
         </div>
       </section>
     </main>
