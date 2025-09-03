@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "./logo";
 import React from "react";
+import { SocialIcon } from "./social-icon";
 
 type FooterProps = {} & React.HTMLAttributes<HTMLDivElement>;
 
@@ -52,38 +53,38 @@ export const Footer = (props: FooterProps) => {
         </ul>
       </nav>
       <section className="flex gap-4 items-center justify-center my-3">
-        <Link href="#">
-          <Image
-            src="/icon-facebook.svg"
-            alt="Facebook Icon"
-            width={20}
-            height={20}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/icon-twitter.svg"
-            alt="Twitter Icon"
-            width={20}
-            height={20}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/icon-pinterest.svg"
-            alt="Pinterest Icon"
-            width={20}
-            height={20}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/icon-instagram.svg"
-            alt="Instagram Icon"
-            width={20}
-            height={20}
-          />
-        </Link>
+        <SocialIcon
+          to="https://facebook.com"
+          image={{
+            src: "/icon-facebook.svg",
+            alt: "Facebook Icon",
+          }}
+          width={20}
+        />
+        <SocialIcon
+          to="https://twitter.com"
+          image={{
+            src: "/icon-twitter.svg",
+            alt: "Twitter Icon",
+          }}
+          width={20}
+        />
+        <SocialIcon
+          to="https://pinterest.com"
+          image={{
+            src: "/icon-pinterest.svg",
+            alt: "Pinterest Icon",
+          }}
+          width={20}
+        />
+        <SocialIcon
+          to="https://instagram.com"
+          image={{
+            src: "/icon-instagram.svg",
+            alt: "Instagram Icon",
+          }}
+          width={20}
+        />
       </section>
     </footer>
   );
