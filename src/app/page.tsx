@@ -1,4 +1,6 @@
+import { Button } from "@/components/button";
 import { Card } from "@/components/card";
+import { Footer } from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Shortener } from "@/components/shortener";
@@ -76,7 +78,7 @@ export default function Home() {
           <Shortener />
         </Suspense>
       </section>
-      <section className="bg-gray-100 px-4 pb-8">
+      <section className="bg-gray-100 px-4 pb-48">
         <div className="container m-auto text-center py-6 px-4">
           <h2 className="mb-4 font-bold text-3xl">Advanced Statistics</h2>
           <p className="text-gray-5 max-w-lg m-auto text-sm">
@@ -84,17 +86,15 @@ export default function Home() {
             dashboard.
           </p>
         </div>
-        <div className="container flex justify-between mx-auto gap-6 flex-col lg:flex-row lg:gap-4 lg:px-8 my-6 relative after:absolute after:bg-blue-4 after:h-2 after:w-3/4 after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:z-0">
+        <div className="container flex justify-between mx-auto gap-6 flex-col lg:flex-row lg:gap-4 lg:px-8 my-6 relative after:absolute after:bg-blue-4 after:lg:h-2 after:lg:w-3/4 after:lg:top-1/2 after:lg:left-1/2 after:lg:-translate-y-1/2 after:lg:-translate-x-1/2 after:h-3/4 after:w-2 after:top-24 after:left-1/2 after:z-0 after:-translate-x-1/2">
           {cards?.length > 0 ? (
             cards.map((card, index) => {
               return (
                 <Card
                   key={card.title}
                   {...card}
-                  className={cn("z-10", {
-                    "lg:translate-y-8": index === 1,
-                    "lg:translate-y-16": index === 2,
-                  })}
+                  style={{ transform: `translateY(${index * 2}rem)` }}
+                  className={cn(`z-10`)}
                 />
               );
             })
@@ -103,6 +103,15 @@ export default function Home() {
           )}
         </div>
       </section>
+      <section className="bg-purple-95 bg-[url('/bg-boost-mobile.svg')] lg:bg-[url('/bg-boost-desktop.svg')] py-24 bg-no-repeat bg-cover bg-center">
+        <div className="container m-auto text-center py-6 px-4">
+          <h2 className="mb-4 font-bold text-3xl text-white">
+            Boost your links today
+          </h2>
+          <Button className="rounded-full py-3 px-4">Get Started</Button>
+        </div>
+      </section>
+      <Footer />
     </main>
   );
 }
