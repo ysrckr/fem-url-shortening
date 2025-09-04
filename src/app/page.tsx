@@ -1,8 +1,8 @@
-import { Button } from "@/components/button";
-import { Card } from "@/components/card";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Shortener } from "@/components/shortener";
+import { Shortener } from "@/components/shortener/shortener";
 import { ShortenerSkeleton } from "@/components/skeletons/shortener.skeleton";
 import { Suspense } from "react";
 import { cn } from "@/utils/cn";

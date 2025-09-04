@@ -1,5 +1,5 @@
 import { ShortenerForm } from "./shortener-form";
-import { URLListItem } from "./url-list-item";
+import { URLListItem } from "../url-list-item";
 
 const shortenLinks = {
   "https://www.example.com/very/long/link": "https://short.ly/abc123",

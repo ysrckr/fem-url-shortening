@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import Logo from "./logo";
-import React from "react";
-import { SocialIcon } from "./social-icon";
+import Logo from "../logo";
+import { SocialIcon } from "../social-icon";
 
 type FooterProps = {} & React.HTMLAttributes<HTMLDivElement>;
 
