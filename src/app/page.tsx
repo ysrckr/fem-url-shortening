@@ -1,6 +1,5 @@
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
-import { Footer } from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Shortener } from "@/components/shortener";
@@ -111,7 +110,6 @@ export default function Home() {
           <Button className="rounded-full py-3 px-4">Get Started</Button>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }
